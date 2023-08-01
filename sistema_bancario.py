@@ -21,7 +21,7 @@ while True:
                 print("O limite de valor de saque foi atingido\nOperação Cancelada!")
             elif valor <= saldo:
                 saldo -= valor
-                extrato += f"SAQUE: R$ {valor}. Saldo {saldo}\n"
+                extrato += f"SAQUE: R$ {valor: .2f}. Saldo {saldo: .2f}\n"
                 limite_de_saques_diarios -= 1
                 print("A operação foi realizada com sucesso")
             else:
@@ -45,7 +45,7 @@ while True:
 ''')
         else:
             saldo += valor_deposito
-            extrato += f"DEPÓSITO: R$ {valor_deposito}. Saldo {saldo}\n"
+            extrato += f"DEPÓSITO: R$ {valor_deposito: .2f}. Saldo {saldo: .2f}\n"
             print("Operação realizada com sucesso!")
     elif opcao == 3:
         if extrato == "":
