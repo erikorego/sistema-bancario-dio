@@ -18,7 +18,7 @@ while True:
         if limite_de_saques_diarios > 0:
             valor = float(input("Insira o valor que deseja sacar: "))
             if valor > 500:
-                print("O limite de saque foi atingido\nOperação Cancelada!")
+                print("O limite de valor de saque foi atingido\nOperação Cancelada!")
             elif valor <= saldo:
                 saldo -= valor
                 extrato += f"SAQUE: R$ {valor}. Saldo {saldo}\n"
@@ -30,7 +30,7 @@ while True:
             print("""O limite diário de Saques foi atingido.
                   Operação Cancelada!
 """)
-    if opcao == 2:
+    elif opcao == 2:
         valor_deposito = float(input("Insira o valor que deseja depositar: "))
         if valor_deposito < 0:
             print("""
@@ -47,6 +47,16 @@ while True:
             saldo += valor_deposito
             extrato += f"DEPÓSITO: R$ {valor_deposito}. Saldo {saldo}\n"
             print("Operação realizada com sucesso!")
-    if opcao == 3:
-        print(extrato)
-        pausa = input("aperte qualquer botão para continuar... ")
+    elif opcao == 3:
+        if extrato == "":
+            print("Nenhuma operação realizada")
+        else:
+            print(extrato)
+            pausa = input("aperte qualquer botão para continuar... ")
+    elif opcao == 0:
+        break
+    else:
+        print('''
+            Opção Inválida!
+            Tente novamente.
+              ''')
